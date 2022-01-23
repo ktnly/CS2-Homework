@@ -1,0 +1,44 @@
+7.8 (Average an array) Write two overloaded methods that return the average of an array with the following headers:
+public static int average(int[] array)
+public static double average(double[] array)
+Write a test program that prompts the user to enter ten double values, invokes this method, and displays the average value
+
+Code:
+import java.util.Scanner;
+
+public class Ex1 {
+	/** Main method */
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+
+		double[] values = new double[10]; // Array of length 10
+
+		System.out.print("Enter ten values of double type: ");
+		for (int i = 0; i < values.length; i++) {
+			values[i] = input.nextDouble();
+		}
+
+		System.out.println("The average value: " + average(values));
+	}
+
+	public static int average(int[] array) {
+		int average = 0; 
+		for (int i: array)
+			average += i;	// Add indexed value to average
+		return average / array.length;
+	}   
+
+	public static double average(double[] array) {
+		double average = 0; 
+		for (double i: array)
+			average += i; // Add indexed value to average
+		return average / array.length;
+	}
+}
+
+OUTPUT:
+Enter ten values of double type:
+
+Example:
+Enter ten values of double type: 10 20 30 40 50 60 70 80 90 99
+The average value: 54.9
